@@ -32,3 +32,19 @@ function applyPreferences() {// Retrieve preferences from localStorage
         document.body.style.color = textColor;
     }
 }
+
+// Function to hanble the form submission
+function savePreferences(event) {
+    event.preventDefault(); // prevents default form submission - prevents page refresh
+
+    // capture the user input from the form
+    const userName = document.getElementbyID('name').value // get the name entered in the form
+    const bgColor = document.getElementById('bgColor').value; // Get the selected background color
+    const textColor = document.getElementById('textColor').value; // Get the selected text color
+
+     // Apply preferences immediately
+     applyPreferences(); // Call the function to update the page with the new preferences
+    
+    // notifies the user that the preferences have been saved
+    alert('Preferences saved successfully!'); // Show a confirmation alert to the user
+}

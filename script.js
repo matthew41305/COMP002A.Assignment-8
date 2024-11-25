@@ -48,3 +48,11 @@ function savePreferences(event) {
     // notifies the user that the preferences have been saved
     alert('Preferences saved successfully!'); // Show a confirmation alert to the user
 }
+
+// Add event listener for form submission
+document.getElementById('preferencesForm').addEventListener('submit', savePreferences); 
+// Attach the savePreferences function to the form's submit event
+
+// Apply preferences on page load
+window.addEventListener('load', applyPreferences); 
+// Ensure saved preferences are applied when the page is loaded

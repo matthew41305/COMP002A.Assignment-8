@@ -9,3 +9,26 @@
 // also want to call this function again when the user saves their preferences to
 // immediately apply them. Make sure you also notify the user somehow that the preferences
 // were saved.
+
+
+// Function to apply user preferences from localStorage
+function applyPreferences() {// Retrieve preferences from localStorage
+    const userName = localStorage.getItem('userName'); // Get the stored user name from localStorage
+    const bgColor = localStorage.getItem('bgColor');   // Get the stored background color from localStorage
+    const textColor = localStorage.getItem('textColor'); // Get the stored text color from localStorage
+
+    // Apply preferences if they are available
+    if (userName) {
+        // If a username exists is found, then update the greeting text with the stored name
+        document.getElementById('greeting').textContent = 'Welcome, ${username}!';
+    }
+    if(bgColor) {
+        // If a background color is found, then apply it to the body's background
+        document.body.style.backgroundcolor = bgColor;
+
+    }
+    if (textColor) {
+        // if a text color is found, then apply it to the body's text color
+        document.body.style.color = textColor;
+    }
+}
